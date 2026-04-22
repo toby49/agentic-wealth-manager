@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: int_daily_stock_metrics
+    description: "Joins daily price data with company fundamentals to create valuation ratios."
+    columns:
+      - name: ticker
+        description: "The stock ticker symbol."
+        tests:
+          - not_null
+      - name: price_to_earnings_ratio
+        description: "Calculated P/E ratio based on closing price and EPS."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0  # P/E shouldn't be negative for this analysis
+      - name: price_timestamp
+        description: "The time the metrics were calculated."
+        tests:
+          - not_null

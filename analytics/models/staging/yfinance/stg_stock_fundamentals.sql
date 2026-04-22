@@ -9,5 +9,5 @@ select
     , roe as return_on_equity
     , sales_per_share as sales_per_share
     , ps_ratio as ps_ratio
-    , last_updated_date as last_updated
+    , last_updated_date as date
 from source
