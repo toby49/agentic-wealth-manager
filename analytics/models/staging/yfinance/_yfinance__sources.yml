@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: yfinance
+    database: agentic-wealth-manager
+    schema: stocks
+    tables:
+      - name: raw_stock_prices
+        description: "Raw stock price data extracted from Yahoo Finance using the yfinance library. This table contains daily stock price information, adjusted close for SP500 stocks."
+      - name: raw_stock_fundamentals
+        description: "Raw fundamental data for listed companies, including financial metrics and ratios."
+      - name: raw_stock_metadata
+        description: "Metadata about the stocks, such as company names and industries, used for reporting and sector diversification."
